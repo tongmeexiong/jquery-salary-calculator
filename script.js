@@ -1,11 +1,13 @@
 $(document).ready(nowReady);
 
 let employeeInfo =[];
+let monthlyCosts = [];
 
 function nowReady() {
     console.log('JQ');
     $('.submitButton').on('click', submitInfo);
     displayInfo();
+    calculateAnnualSalary() 
 }
 
 function submitInfo() {
@@ -29,5 +31,16 @@ function displayInfo() {
         const calculatedList = `<th>${employeeInfo[i].firstName} ${employeeInfo[i].lastName} 
         ${employeeInfo[i].employeriD} ${employeeInfo[i].title} ${employeeInfo[i].annualSalary}</th>`;
         employeeInput.append(calculatedList);
+        calculateAnnualSalary ();
     }
+}
+
+function calculateAnnualSalary() {
+    console.log('Calculation');
+    let totalMonthlyCost = $('.annualSalaryCalculated');
+    totalMonthlyCost.empty
+    for (let i = 0; i < employeeInfo.length; i++) {
+        const monthlyCost = `<th> Monthly Cost </th>`;
+    totalMonthlyCost.append(monthlyCost);
+    }  
 }
