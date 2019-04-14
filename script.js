@@ -2,12 +2,16 @@ $(document).ready(nowReady);
 
 let employeeInfo =[];
 let monthlyCosts = [];
+let monthlyAdjustment = 12;
+let sumOfSalary = 0;
+
 
 function nowReady() {
     console.log('JQ');
     $('.submitButton').on('click', submitInfo);
     displayInfo();
-    calculateAnnualSalary() 
+    calculateMonthlyAdjustment() 
+    addAnnualSalary()
 }
 
 function submitInfo() {
@@ -19,6 +23,7 @@ function submitInfo() {
         annualSalary: $('.salaryInput').val()
 }
     employeeInfo.push(employeeObject);
+    monthlyCosts.push(employeeObject.annualSalary);
     console.log('Clicked Submit Button', employeeInfo); 
     displayInfo()
 }
@@ -28,19 +33,27 @@ function displayInfo() {
     let employeeInput = $('#salaryCalculated');
     employeeInput.empty();
     for (let i = 0; i < employeeInfo.length; i++ ){
-        const calculatedList = `<th>${employeeInfo[i].firstName} ${employeeInfo[i].lastName} 
-        ${employeeInfo[i].employeriD} ${employeeInfo[i].title} ${employeeInfo[i].annualSalary}</th>`;
+        const calculatedList = `<ul>${employeeInfo[i].firstName} ${employeeInfo[i].lastName} 
+        ${employeeInfo[i].employeriD} ${employeeInfo[i].title} ${employeeInfo[i].annualSalary}</ul>`;
         employeeInput.append(calculatedList);
-        calculateAnnualSalary ();
+        calculateMonthlyAdjustment()
+        addAnnualSalary() 
     }
 }
 
-function calculateAnnualSalary() {
+
+function addAnnualSalary() {
+    for (let i = 0; i < monthlyCosts.length; i++) {
+        sumOfSalary = sumOfSalary + monthlyCosts[i];
+    }
+}
+
+function calculateMonthlyAdjustment() {
     console.log('Calculation');
     let totalMonthlyCost = $('.annualSalaryCalculated');
-    totalMonthlyCost.empty
-    for (let i = 0; i < employeeInfo.length; i++) {
-        const monthlyCost = `<th> Monthly Cost </th>`;
-    totalMonthlyCost.append(monthlyCost);
+    totalMonthlyCost.empty ();
+    for (let i = 0; i < monthlyCosts.length; i++) {
+        let theMonthlyCost = sumOfSalary / monthlyAdjustment;
+        totalMonthlyCost.append(theMonthlyCost);
     }  
 }
