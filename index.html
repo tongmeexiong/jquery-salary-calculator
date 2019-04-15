@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="jquery-3.4.0.js"></script>
     <script src="script.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
+
 <body>
     <h1> Salary Calculator</h1>
-<div>
-    <input class="firstNameInput" placeholder="First Name">
-    <input class="lastNameInput" placeholder="Last Name">
-    <input class="idInput" placeholder="Employer ID">
-    <input class= "titleInput" placeholder="Title">
-    <input class="salaryInput" placeholder="Annual Salary">
-    <button class= "submitButton" >Submit</button>
-</div>
+    <div>
+        <input class="firstNameInput" placeholder="First Name">
+        <input class="lastNameInput" placeholder="Last Name">
+        <input class="idInput" placeholder="Employer ID">
+        <input class="titleInput" placeholder="Title">
+        <input class="salaryInput" placeholder="Annual Salary">
+        <button class="submitButton">Submit</button>
+        <button class="deleteButton">Delete</button>
 
-<div>
-<table class="table table-striped table-dark">
-<thead> First Name</thead>
-<tr>
-<th id="salaryCalculated"></th>
-</tr>
-<tr>
-</tr>
-<thead> Last Name</thead>
-<thead> Employer ID</thead>
-<thead> Title</thead>
-<thead> Annual Salary</thead>
-</table>
-</div>
-<div>
-<h2 class= "annualSalaryCalculated"></h2>
-</div>
+    </div>
+
+    <div>
+        <h2> Employee </h2>
+        <table class="table table-striped table-dark">
+            <thead class= "inputs"> First Name</thead>
+            <tr>
+                <th id="salaryCalculated"></th>
+                
+            </tr>
+            <tr>
+            </tr>
+            <thead> Last Name</thead>
+            <thead> Employer ID</thead>
+            <thead> Title</thead>
+            <thead> Annual Salary</thead>
+        </table>
+    </div>
+    <div>
+        <h2 class="annualSalaryCalculated"></h2>
+    </div>
 </body>
+
 </html>
